@@ -5,10 +5,11 @@
       <th><% if @book.profile_image.attached? %></th>
       <th>Title</th>
       <th>Opinion</th>
-      <th><%= book_to "編集", edit_book_path(@book.id) %></th>
-      <th><%= book_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-</th>
-  </tr>
+      <th><%= link_to "編集", edit_book_path(@book.id) %></th>
+      <th> <% if @book.user == current_user %><%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <% end %>
+      </th>
+    </tr>
   </thead>
-
+</table>
 
