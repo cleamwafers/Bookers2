@@ -1,0 +1,14 @@
+<h2>Book detail</h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th><% if @book.profile_image.attached? %></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th><%= book_to "編集", edit_book_path(@book.id) %></th>
+      <th><%= book_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+</th>
+  </tr>
+  </thead>
+
+
