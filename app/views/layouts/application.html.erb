@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-   <script src="https://kit.fontawesome.com/b19cc7d22f.js" crossorigin="anonymous"></script>
   <head>
     <title>Bookers2Ver2</title>
     <%= csrf_meta_tags %>
@@ -11,8 +10,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
+  <body>
+    <header>
+      <script src="https://kit.fontawesome.com/b19cc7d22f.js" crossorigin="anonymous"></script>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
       <a class="navbar-brand" href="/">
@@ -21,7 +21,7 @@
       <ul class="navbar-nav ml-auto">
       </ul>
       <a href="/"><i class="fa-solid fa-house-chimney"> Home</i></a>
-      
+
     <i class="fa-solid fa-link">About</i>
     <i class="fa-solid fa-users">Users</i>
     <i class="fa-solid fa-book-open">Books</i>
@@ -33,7 +33,7 @@
     </li>
   </nav>
      <% if user_signed_in? %>
-    
+
     <% else %>
       <li>
         <%= link_to "新規登録", new_user_registration_path %>
@@ -41,12 +41,12 @@
       <li>
         <%= link_to "ログイン", new_user_session_path %>
       </li>
-     
+
     <% end %>
-  
+
     </header>
     <%= yield %>
-    
+
     <footer>
       <div class="container mt-5">
         <div class="row">
@@ -54,6 +54,6 @@
     		<p>CopyRight Infratop.inc</p>
     		</div>
     </footer>
-   
+
   </body>
 </html>
