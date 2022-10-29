@@ -18,30 +18,33 @@
       <a class="navbar-brand" href="/">
       <span>Bookers</span>
       </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-      </ul>
-      <a href="/"><i class="fa-solid fa-house-chimney"> Home</i></a>
-      <a href="/home/about"><i class="fa-solid fa-link">About</i></a>
-    <i class="fa-solid fa-users">Users</i>
-    <i class="fa-solid fa-book-open">Books</i>
-    <i class="fa-solid fa-user-plus">sign_in</i>
-    <i class="fa-solid fa-right-to-bracket">Log in</i>
-    <li>
-      <i class="fa-solid fa-right-from-bracket"></i>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    </li>
-  </nav>
-     <% if user_signed_in? %>
+             <% if user_signed_in? %>
 
+   <li> <a href="/"><i class="fa-solid fa-house-chimney"> Home</i></a></li>
+   <li><i class="fa-solid fa-users">Users</i></li>
+   <li><i class="fa-solid fa-book-open">Books</i></li>
+   <li><i class="fa-solid fa-right-from-bracket"></i></li>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-
+   <li><a class="nav-link text-light" href="/"><i class="fa-solid fa-house-chimney"> Home</i></a></li>
+   <li><a class="nav-link text-light" href="/home/about"><i class="fa-solid fa-link">About</i></a></li>
+   <li>
+    <a class="nav-link text-light"><%= link_to "sign ",new_user_registration_path %>sign_up><i class="fa-solid fa-user-plus"></i>Sign up
+    </a>
+   </li>
+   <li>
+      <a class="nav-link text-light" <%= link_to "Log in", new_user_session_path %><i class="fa-solid fa-right-to-bracket"></i></a>
+    </li>
     <% end %>
+
+      </ul>
+      </div>
+  </nav>
 
     </header>
     <%= yield %>
