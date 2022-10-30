@@ -3,8 +3,8 @@
 <%= form_with model: @user, url: user_session_path do |f| %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :name %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "Name" %>
   </div>
 
   <div class="field">
@@ -20,7 +20,11 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="btn-wrapper col-10 mx-auto">
+  <div class="row">
+  <a class="btn btn-info btn-sm btn-block mb-3 sign_in" href="/users/sign_in">Log in</a>
+  </div>
+  </div>
   </div>
 <% end %>
 

@@ -24,13 +24,23 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
   <% if user_signed_in? %>
-　Welcome! You have signed up successfully.
-   <li> <a href="/"><i class="fa-solid fa-house-chimney"> Home</i></a></li>
-   <li><i class="fa-solid fa-users">Users</i></li>
-   <li><i class="fa-solid fa-book-open">Books</i></li>
-   <li><i class="fa-solid fa-right-from-bracket"></i></li>
-   <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
+  Welcome! You have signed up successfully.
+   <li>
+    <%= link_to root_path,class: 'nav-link text-light' do %>
+     <i class="fas fa-home"></i> Home
+    <% end %>
+     </li>
+   <li>
+    <%= link_to new_book_path,class: 'nav-link text-light' do %>
+     <i class="fa-solid fa-book-open"></i>Books
+    <% end %>
+     </li>
+   <li>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+     <i class="fa-solid fa-right-from-bracket"></i>Log out
+     <% end %>
+   </li>
+   <% else %>
    <li>
     <%= link_to root_path,class: 'nav-link text-light' do %>
      <i class="fas fa-home"></i> Home
@@ -38,20 +48,20 @@
    </li>
    <li>
      <%= link_to home_about_path,class: 'nav-link text-light' do %>
-     <i class="fa-solid fa-link"></i>About
+     <i class="fa-solid fa-link"></i> About
      <% end %>
    </li>
    <li>
     <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-user-plus" ></i>Sign_up
+    <i class="fa-solid fa-user-plus"></i> Sign_up
     <% end %>
    </li>
    <li>
     <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-right-to-bracket" ></i>Log_in
+    <i class="fa-solid fa-right-to-bracket"></i> Log_in
     <% end %>
    </li>
-   <% end %>
+  <% end %>
 
       </ul>
       </div>
