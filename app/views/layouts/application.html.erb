@@ -23,8 +23,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
-             <% if user_signed_in? %>
-
+  <% if user_signed_in? %>
+　Welcome! You have signed up successfully.
    <li> <a href="/"><i class="fa-solid fa-house-chimney"> Home</i></a></li>
    <li><i class="fa-solid fa-users">Users</i></li>
    <li><i class="fa-solid fa-book-open">Books</i></li>
@@ -47,11 +47,11 @@
     <% end %>
    </li>
    <li>
-       <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
-     <i class="fa-solid fa-right-to-bracket" ></i>Log_in
+    <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
+    <i class="fa-solid fa-right-to-bracket" ></i>Log_in
     <% end %>
-    </li>
-    <% end %>
+   </li>
+   <% end %>
 
       </ul>
       </div>
