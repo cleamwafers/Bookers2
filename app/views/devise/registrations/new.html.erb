@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
 <h2>Sign up</h2>
 
 <%= form_with model: @user, url: user_registration_path do |f| %>
@@ -17,18 +20,21 @@
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %><br/>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
   <div class="actions">
-    <%= f.submit "Sign up" %>
+  <input type="submit" name="commit" value="Sign up" class="btn btn-sm btn-success" data-disable-with="Sign up">
   </div>
-<% end %>
+  <a href="/users/sign_in">Log in</a>
 
-<%= render "devise/shared/links" %>
+  <% end %>
+
+</div>
+</div>
+</div>
