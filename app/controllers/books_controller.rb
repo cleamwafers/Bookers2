@@ -1,4 +1,5 @@
 class BookController < ApplicationController
+  protect_from_forgery
   def new
     @book=Book.new
   end
@@ -16,7 +17,6 @@ class BookController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-  end
   end
 
   def destroy
