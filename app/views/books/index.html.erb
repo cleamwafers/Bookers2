@@ -3,10 +3,10 @@
   <thead>
     <tr>
       <th><% if @book.profile_image.attached? %></th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th><%= link_to "編集", edit_book_path(@book.id) %></th>
-      <th> <% if @book.user == current_user %><%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <th><%= f.label :title %></th>
+      <th><%= f.label :opinion %></th>
+      <th><%= link_to "Edit", edit_book_path(@book.id) %></th>
+      <th> <% if @book.user == current_user %><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
       <% end %>
       </th>
     </tr>
