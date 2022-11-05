@@ -18,8 +18,13 @@
     </tbody>
     </table>
     <div class="row">
-      <%= link_to edit_user_path,class: "btn btn-outline-secondary btn-block" do %>
+    <% if @user.id == current_user.id %>
+      <%= link_to edit_user_path(current_user.id)  do %>
+       <div class= "btn btn-outline-secondary btn-block">
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+       </div>
     <i class="fa-solid fa-user-gear"></i>
+    <% end %>
     <% end %>
     </div>
  </div>
