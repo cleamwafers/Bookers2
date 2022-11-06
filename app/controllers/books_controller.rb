@@ -1,19 +1,22 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   protect_from_forgery
+
   def new
-    @book=Book.new
+    @book = Book.new
+    @user = current_user
   end
 
   def create
     @book=Book.new(book_params)
-    @book.user_id=current_user.id
+    @book.user_id = current_user.id
     @book.save
     redirect_to books_path(@book.id), notice: "You have created book successfully."
   end
 
   def index
-    @book = Book.all(params[:id])
+    @book = Book.all
+    @user = current_user
   end
 
   def show
@@ -25,6 +28,7 @@ class BookController < ApplicationController
     @book.destroy  # データ（レコード）を削除
     redirect_to '/books' # 投稿一覧画面へリダイレクト
   end
+
   def update
     @book = Book.find(params[:id])
     # 編集ページの送信ボタンから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
@@ -39,12 +43,13 @@ class BookController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    　if @book.user == current_user
-      　render "edit"
-      else
-      　redirect_to books_path
-      end
-　end
+    if @book.user == current_user
+      render "edit"
+    else
+      redirect_to books_path
+    end
+  end
+
   private
 
   def book_params
