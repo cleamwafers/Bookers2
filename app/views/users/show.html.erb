@@ -30,7 +30,7 @@
       <div><%= f.label :Opinion %></div>
       <div><%= f.text_area :Opinion %></div>
 
-    <%= f.submit '投稿' %>
+    <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
     <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
@@ -51,7 +51,7 @@
         <%= image_tag @user.get_profile_image  %>
       </td>
       <td>
-        <%= book.title %>
+        <%= link_to book.title,book_path(book.id) %>
       </td>
       <td>
         <%= book.body %>
