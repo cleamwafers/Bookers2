@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @books = @user.books
     @book = Book.new
   end
-  
+
   def edit
     @user = User.find(params[:id])
     if @book.user == current_user
@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   end
 
   def index
+  end
+  
+  def update
   end
 
   private

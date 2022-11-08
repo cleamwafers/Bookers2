@@ -27,8 +27,8 @@
      <div><%= f.label :title %></div>
      <div><%= f.text_field :title %></div>
     <br>
-      <div><%= f.label :Opinion %></div>
-      <div><%= f.text_area :Opinion %></div>
+      <div><%= f.label :opinion %></div>
+      <div><%= f.text_area :opinion %></div>
 
     <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
     <% end %>
@@ -54,7 +54,7 @@
         <%= link_to book.title,book_path(book.id) %>
       </td>
       <td>
-        <%= book.body %>
+        <%= @book.opinion %>
       </td>
     </tr>
      <% end %>
