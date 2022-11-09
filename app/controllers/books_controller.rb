@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   protect_from_forgery
 
   def new
-    @book = Book.new
+
     @user = current_user
   end
 
@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
     @books = Book.all
     @user = current_user
   end
@@ -23,6 +24,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @books =Book.new
     @user = @book.user
+
   end
 
   def destroy
@@ -55,7 +57,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :pinion)
+    params.require(:book).permit(:title, :body)
   end
 
   def correct_user

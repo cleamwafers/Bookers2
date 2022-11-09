@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = current_user
   end
 
   def update
@@ -31,6 +32,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction,)
+    params.require(:user).permit(:name, :introduction,:profile_image)
   end
 end
