@@ -33,8 +33,7 @@
     <% end %>
     </div>
     <div class="col-md-8 offset-md-1">
-      <h2>Books</h2>
-      <% @books.all %>
+      <h2>Book detail</h2>
       <table class="table table-hover table-inverse">
    <thead>
     <tr>
@@ -45,20 +44,24 @@
     </tr>
    </thead>
    <tbody>
+     <% @books.all %>
            <tr>
            <td>
             <%= image_tag 'sample-author1.jpg' %>
+            <br>
+            <% link_to user.name,user_path(user.id) %>
            </td>
            <td>
-            <%= @book.title %>
+            <%= link_to book.title, book_path(book.id) %>
            </td>
            <td>
-            <% @book.opinion %>
+            <% book.opinion %>
            </td>
            </tr>
+     <% end %>
    </tbody>
    </table>
-   <% end %>
+
      </div>
   </div>
  </div>
