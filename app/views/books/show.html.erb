@@ -11,7 +11,7 @@
    <tbody>
            <tr>
            <td>
-            <%= image_tag 'sample-author1.jpg' %>
+           <%= image_tag @user.get_profile_image(100,100)  %>
             <br>
             <%= link_to @book.user.name,user_path(@book.user.id) %>
            </td>
