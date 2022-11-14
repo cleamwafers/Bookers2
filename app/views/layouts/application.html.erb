@@ -34,17 +34,17 @@
      </li>
    <li>
     <%= link_to users_path,class: 'nav-link text-light' do %>
-     <i class="fa-solid fa-users"></i> Users
+     <i class="fas fa-users"></i> Users
     <% end %>
    </li>
    <li>
     <%= link_to books_path,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-book"></i> Books
+    <i class="fas fa-book"></i> Books
     <% end %>
      </li>
    <li>
     <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-right-from-bracket"></i> Log out
+    <i class="fas fa-right-from-bracket"></i> Log out
      <% end %>
    </li>
    <% else %>
@@ -55,17 +55,17 @@
    </li>
    <li>
      <%= link_to about_path,class: 'nav-link text-light' do %>
-     <i class="fa-solid fa-link"></i> About
+     <i class="fas fa-link"></i> About
      <% end %>
    </li>
    <li>
     <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-user-plus"></i> Sign_up
+    <i class="fas fa-user-plus"></i> Sign_up
     <% end %>
    </li>
    <li>
     <%= link_to new_user_session_path,class: 'nav-link text-light' do %>
-    <i class="fa-solid fa-right-to-bracket"></i> Log_in
+    <i class="fas fa-sign-in-alt"></i> Log_in
     <% end %>
    </li>
   <% end %>
