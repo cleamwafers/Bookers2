@@ -26,8 +26,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id),notice: "You have updated user successfully."
     else
     flash.now[:danger] = "error"
-    @users = User.all
-    render :index
+    render :edit
     end
   end
 

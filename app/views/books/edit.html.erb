@@ -11,12 +11,15 @@
       <% end %>
 
       <h1>Editing Book</h1>
-      <div><%= f.label :Title %></div>
-      <%= f.text_field :book.title %>
-     <div><%= f.label :Opinion %></div>
-      <div><%= f.text_area :book.body %></div>
-      <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
-      <%= link_to "show",books_path(@book.id) %>
+      <%= form_with model: @book, url: '/books', method: :post do  |f| %>
+      <label for="inputTitle">Title</label><br>
+      <%= f.text_field :title, autofocus: true, id:"book.name", placeholder:"name"%><br>
+      <label for="inputBody">Opinion</label><br>
+      <%= f.text_area :body, autofocus: true, id:"inputBody",placeholder:"body"%><br>
+
+      <%= f.submit "Update Book", class: "btn btn-success" %>
+      <% end %>
+      <%= link_to "Show",book_path(@book.id) %>
       |
       <%= link_to "Back",books_path %>
     </div>
