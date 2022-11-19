@@ -42,10 +42,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     # 編集ページの送信ボタンから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
     if @book.update(book_params)
-     redirect_to book_path(@book.id), notice: "You have updated book successfully."
+     redirect_to book_path(@book),notice: "You have updated book successfully."
     else
      flash.now[:danger] = "error"
-     @books = Book.all
+     #@books = Book.all
      render :index
     end
   end
