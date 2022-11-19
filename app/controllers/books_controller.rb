@@ -45,7 +45,7 @@ class BooksController < ApplicationController
      redirect_to book_path(@book),notice: "You have updated book successfully."
     else
      flash.now[:danger] = "error"
-     #@books = Book.all
+     @books = Book.all
      render :index
     end
   end
