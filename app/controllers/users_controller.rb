@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :baria_user,only: [:edit,:update]
+
   def show
     @user = User.find(params[:id])
     @books = @user.books
@@ -7,10 +10,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user == current_user
+    if  @user == current_user
       render "edit"
     else
-      redirect_to books_path
+      redirect_to user_path
     end
   end
 
@@ -31,6 +34,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def baria_user
+    @user = params[:id]
+    if params[:id].to_i !=current_user.id
+    redirect_to user_path(current_user.id)
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :introduction,:profile_image)
